@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class StringAdapter: RecyclerView.Adapter<StringAdapter.StringViewHolder>(){
+class StrAdapter: RecyclerView.Adapter<StrAdapter.StringViewHolder>(){
 
     private val list = mutableListOf<String>()
 

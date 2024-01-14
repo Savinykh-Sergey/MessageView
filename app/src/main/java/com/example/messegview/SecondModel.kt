@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SecondViewModel: ViewModel() {
+class SecondModel: ViewModel() {
 
     private val _dataResponse = MutableLiveData<List<String>>()
     val dataResponse: LiveData<List<String>>

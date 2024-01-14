@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.messegview.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
-    //private val binding: FragmentFirstBinding by viewBinding()
+    private val binding: FragmentFirstBinding by viewBinding()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*binding.buttonNavigateSecond.setOnClickListener {
+        binding.buttonNavigateSecond.setOnClickListener {
             val userInput = binding.edittextUserInput.text.toString()
             val direction =
                 FirstFragmentDirections.actionFirstFragmentToSecondFragment(
@@ -23,7 +26,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         }
         binding.buttonNavigateThird.setOnClickListener {
             findNavController().navigate(R.id.action_firstFragment_to_thirdFragment)
-        }*/
+        }
     }
 
     companion object {

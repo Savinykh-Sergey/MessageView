@@ -2,9 +2,7 @@ package com.example.messegview
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,7 +14,7 @@ import com.example.messegview.databinding.FragmentAllSenderMsgBinding
 
 class AllSenderMsgFragment : Fragment(R.layout.fragment_all_sender_msg) {
     private val args: AllSenderMsgFragmentArgs by navArgs()
-    private val adapter = StringAdapter()
+    private val adapter = StrAdapter()
     private val binding: FragmentAllSenderMsgBinding by viewBinding()
     private val viewModel: AllSenderMsgViewModel by viewModels()
 

@@ -6,9 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Telephony
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -19,9 +17,9 @@ import com.example.messegview.databinding.FragmentThirdBinding
 
 class ThirdFragment : Fragment(R.layout.fragment_third) {
     private val binding: FragmentThirdBinding by viewBinding()
-    private val messageViewModel: MessageViewModel by viewModels()
-    private val adapter = MsgAdapter(::onMsgItemClick)
-    //    private val stringAdapter = StringAdapter()
+    private val messageModel: MessageModel by viewModels()
+    private val adapter = MassageAdapter(::onMsgItemClick)
+    private val stringAdapter = StrAdapter()
     private val smsMap: MutableMap<String, MutableList<String>> = mutableMapOf()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,14 +30,14 @@ class ThirdFragment : Fragment(R.layout.fragment_third) {
     }
 
     private fun bindDataRequest() {
-        messageViewModel.liveData.observe(viewLifecycleOwner) {
+        messageModel.liveData.observe(viewLifecycleOwner) {
             adapter.submitList(
                 it.filter { i -> i.value.isNotEmpty() }
                     .map { (key, value) ->
-                        MsgPreview(sender = key, lastMsg = value.first(), msges = value)
+                        MassegePreview(sender = key, lastMsg = value.first(), msges = value)
                     })
         }
-        messageViewModel.makeDataRequest(smsMap)
+        messageModel.makeDataRequest(smsMap)
     }
 
     private fun initRecycler() {

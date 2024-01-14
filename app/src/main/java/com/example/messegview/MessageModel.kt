@@ -3,7 +3,7 @@ package com.example.messegview
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MessageViewModel: ViewModel() {
+class MessageModel: ViewModel() {
     fun makeDataRequest(list: Map<String, List<String>>) {
         _liveData.postValue(list)
     }
